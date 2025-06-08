@@ -1,2 +1,6 @@
-pandas
-matplotlib
+// filepath: c:\Users\eduar\OneDrive\Área de Trabalho(1)\Faculdade\treinamento_de_ia\requirements.txt
+pandas==2.2.3
+matplotlib==3.9.0
+pytest==8.2.2
+scikit-learn==1.5.0
+requests==2.32.3
