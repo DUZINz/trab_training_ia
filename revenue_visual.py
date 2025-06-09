@@ -1,13 +1,13 @@
 from calculations import revenue_per_industry
 import matplotlib.pyplot as plt
 
-# Get the data for revenue per industry
+# Gera os dados de receita média por indústria
 revenue_data = revenue_per_industry()
 
-# Sort the data by revenue in descending order and select the top 25
+# Seleciona as 25 maiores receitas
 top_25_revenue_data = revenue_data.sort_values(ascending=False).head(25)
 
-# Creating the bar graph
+# Cria o gráfico de barras das 25 maiores indústrias em receita
 plt.figure(figsize=(10, 6))
 plt.bar(top_25_revenue_data.index, top_25_revenue_data.values)
 

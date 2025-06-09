@@ -1,13 +1,12 @@
 from calculations import get_public_orgs, revenue_per_industry
 import pytest
 
-
 def test_get_public_orgs():
+    # Testa se o número de organizações públicas está correto
     expected_num_public_orgs = (
-        54  # replace with the actual number of active drivers in your dataset
+        54  # Substitua pelo valor real do seu dataset
     )
     assert get_public_orgs() == expected_num_public_orgs
-
 
 @pytest.mark.parametrize(
     "Industry, expected_revenue",
@@ -19,6 +18,7 @@ def test_get_public_orgs():
     ids=["Wireless", "Textiles", "Accounting"],
 )
 def test_revenue_per_industry(Industry, expected_revenue):
+    # Testa se a média de receita por indústria está correta
     revenue_ratio = revenue_per_industry()
     assert (
         revenue_ratio[Industry] == expected_revenue
