@@ -1,24 +1,49 @@
-# Data Science Template
+# Sistema Inteligente para Análise de Apendicite Pediátrica
 
-This sample repo contains the recommended structure for a Python data science project. For more information on data science in VS Code, see the [Data Science Overview](https://code.visualstudio.com/docs/datascience/overview) in our docs. In this sample, we use the `pandas` and `matplotlib` libraries to perform data analysis and visualize sample data and the `pytest` library to perform tests.
+Este projeto utiliza machine learning (Random Forest) para apoiar profissionais de saúde no diagnóstico, decisão de manejo e avaliação de severidade de apendicite em crianças, com base em dados reais. O sistema realiza pré-processamento, treinamento de modelos e demonstração de predição para novos pacientes.
 
-For a more in-depth tutorial, see our [data science tutorial](https://code.visualstudio.com/docs/datascience/data-science-tutorial).
+## Principais Funcionalidades
 
-The code in this repo aims to follow Python style guidelines as outlined in [PEP 8](https://peps.python.org/pep-0008/).
+- Download automático da base de dados pública de apendicite pediátrica.
+- Pré-processamento dos dados, incluindo tratamento de valores ausentes e codificação de variáveis.
+- Treinamento de modelos Random Forest para:
+  - Previsão do tipo de manejo (conservador ou cirúrgico).
+  - Previsão da severidade (simples ou complexa) para casos cirúrgicos.
+- Avaliação dos modelos utilizando validação cruzada.
+- Demonstração de uso do sistema com um paciente exemplo.
 
-## Running the Sample
+## Como Executar
 
-To successfully run this example, we recommend the following VS Code extensions:
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
+1. Instale as dependências:
+   ```
+   pip install -r requirements.txt
+   ```
 
-- Open the template folder in VS Code (**File** > **Open Folder...**)
-- Create a Python virtual environment using the **Python: Create Environment** command found in the Command Palette (**View > Command Palette**). Ensure you install dependencies found in the `requirements.txt` file
-- Ensure your newly created environment is selected using the **Python: Select Interpreter** command found in the Command Palette
-- Run `calculations.py` using the Play Button in the top right corner or by selecting **Python > Python File in Terminal** from the context menu or Command Palette
-- Run `revenue_visual.py` using the Play Button in the top right corner or by selecting **Python > Python File in Terminal** from the context menu or Command Palette to generate the bar graph visual
-- To test the Python code, install `dev-requirements.txt` into your virtual environment. 
-- Navigate to the Test Panel to configure your Python test or by triggering the **Python: Configure Tests** command from the Command Palette
-- Run tests in the Test Panel or by clicking the Play Button next to the individual tests in the `test_calculations.py` file
+2. Execute o script principal:
+   ```
+   python appendicitis_analysis.py
+   ```
 
+O script irá baixar automaticamente a base de dados, treinar os modelos e mostrar exemplos de uso.
+
+## Estrutura do Projeto
+
+- `appendicitis_analysis.py`: script principal de análise de apendicite.
+- `requirements.txt`: dependências do projeto.
+- `dev-requirements.txt`: dependências adicionais para desenvolvimento e testes.
+- Pasta `tests/`: contém testes automatizados para scripts de exemplo de análise de organizações.
+- Scripts auxiliares (`calculations.py`, `revenue_visual.py`): exemplos de análise de dados de organizações, não relacionados à análise de apendicite.
+
+## Observações
+
+- Os scripts de organizações (`calculations.py`, `revenue_visual.py` e arquivos em `tests/`) utilizam um arquivo `data.csv` que não é necessário para a análise de apendicite.
+- O foco principal do projeto é o script `appendicitis_analysis.py`.
+
+## Requisitos
+
+- Python 3.x
+- pandas, scikit-learn, requests, matplotlib, pytest
+
+---
+
+Projeto adaptado para fins acadêmicos e de demonstração.
